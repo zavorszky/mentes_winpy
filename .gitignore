@@ -1,0 +1,8 @@
+.vscode
+.venv/
+*__pycache__/
+*.log
+*.zip
+test/*.jpg
+test/test_zip/
+test/test_zip2/

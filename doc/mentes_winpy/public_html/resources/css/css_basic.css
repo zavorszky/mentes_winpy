@@ -1,0 +1,143 @@
+/*
+Mentés, WinCmd szkripttel. (mentes WinCmd)
+Bárki felhasználhatja.
+*/
+/* 
+    Created on : 2024.09.04., 18:53:09
+    Author     : dady
+*/
+
+/*
+----------------------------------
+Fixen a lap tetején fejléc és menü
+----------------------------------
+A lap 3 fő részből áll:
+fej rész
+    #header_base
+    Csak egy lehet belőle.
+    Meg kell adni a háttérszint, hogy az "overflow: hidden;" opció hatásos legyen.
+    A "top: 0px;" utasítás pozicionálja az oldal tetejére.
+
+Alatta a navigációs rész.
+    nav ul
+    nav ul li
+    ...
+    .c_kiemelt_menuelem
+    Együttesen csak egy navigációs elem lehet.
+
+    A "top: 40px;" utasítás pozicionálja az oldal tetejétől lejjebb.
+    A fejléc a navigációs rész alá nyúlik, de az "overflow: hidden;" utasítás
+    hatására mind a két blokk eltakarja a felfelé gördülő szöveget.
+
+Igény szeriont egy vagy több menüelem kiemelhető a ".c_kiemelt_menuelem" osztállyal.
+
+Az oldal tartalmát, hasznos szövegét a "main" elembe kett tenni
+    main
+    Csak egy lehet belőle.
+
+Lehetőség van lábrészt használni.
+    footer
+    Csak egy lehet.
+*/
+
+body {
+    margin: 0;
+}
+
+#header_base {
+    margin: 0;
+    padding: 14px;
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: white;
+    background-color: lightblue;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightgray;
+    position: fixed;
+    top: 40px;
+    width: 100%
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: lightgray;
+    background-color: gray;
+}
+nav ul li a:hover:not(.active) {
+    color: black;
+    background-color: yellow;
+}
+
+.c_menuelem_kiemelt {
+    color: black;
+    background-color: lightgreen;
+}
+
+.c_menuelem_nem_valasztaho {
+    pointer-events: none;
+}
+
+main {
+    padding: 20px;
+    margin-top: 60px;
+}
+
+footer {
+    padding: 14px;
+    background-color: lightblue;
+}
+
+/*
+Egyszerű táblázat
+-----------------
+*/
+
+.c_tabla_egyszeru {
+    border-collapse: collapse;
+}
+
+table.c_tabla_egyszeru th, table.c_tabla_egyszeru td {
+    border: 1px solid grey;
+    padding: 4px;
+}
+
+table.c_tabla_egyszeru th {
+    background-color: lightgray;
+}
+
+/*
+Egyszerű szövegblokk
+--------------------
+*/
+.c_szovegblokk_egyszeru {
+    display: block;
+    padding: 14px;
+    background-color: lavender;
+}
+
+dt {
+    font-weight: bold;
+}
+
+img {
+    border: 1px solid black;
+}
+
+figcaption {
+    font-style: italic;
+}

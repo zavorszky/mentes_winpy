@@ -1,0 +1,8 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Mentés, Python szkripttel. (mentes winpy)
+${licensePrefix}Bárki felhasználhatja.
+<#if licenseLast??>
+${licenseLast}
+</#if>
