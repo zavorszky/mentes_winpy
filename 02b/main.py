@@ -1,14 +1,19 @@
 """
 main.py
 A mentes_winpy mentést végző program indító/fő programja.
+Figyelem!
+  A következő csomagoknak a 'pythonpat' környezeti változóban
+  szerepelniün kell, hogy a Python interpreter megtalálja őket:
+  z9hiba
+  z9konfig
+  z9log
 """
 
 import sys
-import os
-import configparser
-import re
-import z9hiba.mod_z9hiba as hib
-import z9konfig.mod_z9konfig as konf
+import logging
+import z9hiba.mod_hiba as hib
+import z9konfig.mod_konfig as konf
+import z9log.mod_log as log
 import mod_kozos_dolgok as koz
 
 # Konstansok
@@ -53,7 +58,8 @@ def main(*p_argv) -> None:
     print(f"{PRG_NEV} (v{PRG_VERZ})")
     print("Indítási argumentumok:")
     for i, elem in enumerate(p_argv[0]):
-        print(f"\t {i}. {elem}")
+        if i > 0:
+            print(f"\t {i}. {elem}")
 
     try:
         print("Argumentum(ok) ellenőrzése...")
@@ -67,23 +73,26 @@ def main(*p_argv) -> None:
         print("A konfig file beolvasása...")
 
         konf_kezelo = konf.KonfigRegisztriKezelo(v_konfig_ffn, KONFIG_FT_ERVENYES)
+        v_logging_config_ffn: str = konf_kezelo.cp.get(
+            section=KONFIG_LOG_FFN_KULCS1, option=KONFIG_LOG_FFN_KULCS2
+        )
 
-        v_log_ffn: str = None
-        try:
-            v_log_ffn: str = konf_kezelo.cp.get(
-                KONFIG_LOG_FFN_KULCS1, KONFIG_LOG_FFN_KULCS2
-            )
-        except Exception as e:
-            raise MainHiba_nem_sikerult_a_log_fn_kiolvasasa(
-                KONFIG_LOG_FFN_KULCS1, KONFIG_LOG_FFN_KULCS2
-            ) from e
+        koz.logger = logging.getLogger("mentes_winpy")
 
-        print("\nMentés kész.")
+        log.logging_setup(p_logging_config_ffn=v_logging_config_ffn)
+
+        koz.logger.info("*** Naplózás elindult...")
+
+        # Ide jön a mentés
+
+        koz.logger.info("*** Naplózás befejeződött.")
+        print("A mentés kész.")
     except (
         MainHiba_az_arg_szam_nem_egy,
         konf.KonfigHiba_a_konfig_file_nem_letezik,
         konf.KonfigHiba_a_konfig_file_olvasasa_sikertelen,
         konf.KonfigHiba_a_konfig_ft_hibas,
+        log.Mod_logHiba_konfig_arg_beallitas,
     ) as e:
         print("\t", hib.hibauzenet(e))
     except Exception as e:

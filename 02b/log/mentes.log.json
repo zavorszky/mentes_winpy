@@ -1,0 +1,10 @@
+{"message": "Naplózás elindult", "timestamp": "2024-11-22T22:33:31.438874+01:00", "level": "INFO", "logger": "mentes_winpy", "module": "main", "function": "main", "line": 83, "thread_name": "MainThread"}
+{"message": "Naplózás befejeződött.", "timestamp": "2024-11-22T22:33:31.438874+01:00", "level": "INFO", "logger": "mentes_winpy", "module": "main", "function": "main", "line": 85, "thread_name": "MainThread"}
+{"message": "Naplózás elindult", "timestamp": "2024-11-22T22:36:27.161395+01:00", "level": "INFO", "logger": "mentes_winpy", "module": "main", "function": "main", "line": 84, "thread_name": "MainThread"}
+{"message": "Naplózás befejeződött.", "timestamp": "2024-11-22T22:36:27.161395+01:00", "level": "INFO", "logger": "mentes_winpy", "module": "main", "function": "main", "line": 86, "thread_name": "MainThread"}
+{"message": "Naplózás elindult", "timestamp": "2024-11-22T22:39:27.769902+01:00", "level": "INFO", "logger": "mentes_winpy", "module": "main", "function": "main", "line": 84, "thread_name": "MainThread"}
+{"message": "Naplózás befejeződött.", "timestamp": "2024-11-22T22:39:27.770181+01:00", "level": "INFO", "logger": "mentes_winpy", "module": "main", "function": "main", "line": 88, "thread_name": "MainThread"}
+{"message": "*** Naplózás elindult", "timestamp": "2024-11-22T22:40:21.638803+01:00", "level": "INFO", "logger": "mentes_winpy", "module": "main", "function": "main", "line": 84, "thread_name": "MainThread"}
+{"message": "*** Naplózás befejeződött.", "timestamp": "2024-11-22T22:40:21.638803+01:00", "level": "INFO", "logger": "mentes_winpy", "module": "main", "function": "main", "line": 88, "thread_name": "MainThread"}
+{"message": "*** Naplózás elindult...", "timestamp": "2024-11-22T22:40:48.942776+01:00", "level": "INFO", "logger": "mentes_winpy", "module": "main", "function": "main", "line": 84, "thread_name": "MainThread"}
+{"message": "*** Naplózás befejeződött.", "timestamp": "2024-11-22T22:40:48.942776+01:00", "level": "INFO", "logger": "mentes_winpy", "module": "main", "function": "main", "line": 88, "thread_name": "MainThread"}
