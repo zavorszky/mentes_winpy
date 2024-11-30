@@ -9,6 +9,13 @@ Figyelem!
   z9log
 """
 
+__version__ = "2.0"
+
+__all__ = []
+
+__author__ = "zavorszky@yahoo.com"
+
+
 import sys
 import logging
 import z9hiba.mod_hiba as hib
@@ -46,12 +53,6 @@ class MainHiba_nem_sikerult_a_log_fn_kiolvasasa(Exception):
         super().__init__(self.message)
 
 
-# Függvények
-# ----------
-def modul_verzio() -> str:
-    return "2.0"
-
-
 # Főprogram
 # ---------
 def main(*p_argv) -> None:
@@ -72,7 +73,7 @@ def main(*p_argv) -> None:
 
         print("A konfig file beolvasása...")
 
-        konf_kezelo = konf.KonfigRegisztriKezelo(v_konfig_ffn, KONFIG_FT_ERVENYES)
+        konf_kezelo = konf.KonfigRegDBKezelo(v_konfig_ffn, KONFIG_FT_ERVENYES)
         v_logging_config_ffn: str = konf_kezelo.cp.get(
             section=KONFIG_LOG_FFN_KULCS1, option=KONFIG_LOG_FFN_KULCS2
         )
